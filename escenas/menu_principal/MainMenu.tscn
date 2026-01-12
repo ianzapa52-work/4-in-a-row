@@ -1,0 +1,369 @@
+[gd_scene load_steps=24 format=3 uid="uid://b2easkbigjl11"]
+
+[ext_resource type="Script" uid="uid://bbqvbkh1q8p0h" path="res://escenas/menu_principal/main_menu.gd" id="1_i26rj"]
+[ext_resource type="FontFile" uid="uid://b7cw322lml5ae" path="res://fuentes/PressStart2P-Regular.ttf" id="2_to8oe"]
+[ext_resource type="Script" uid="uid://dtaso11fe6te4" path="res://escenas/juego/sfx_manager.gd" id="3_kkrf1"]
+[ext_resource type="StyleBox" uid="uid://cuew0c6qdjlfy" path="res://estilos/estilo_boton_normal.tres" id="3_uu6ov"]
+[ext_resource type="StyleBox" uid="uid://l6l5nd1kkd0v" path="res://estilos/estilo_boton_hover.tres" id="4_e30hv"]
+[ext_resource type="StyleBox" uid="uid://euad3vdgwtly" path="res://estilos/estilo_boton_pressed.tres" id="4_hvqrm"]
+[ext_resource type="Script" uid="uid://bwbhgwehbnl47" path="res://escenas/juego/music_manager.gd" id="4_o7ylo"]
+[ext_resource type="StyleBox" uid="uid://bj0kbdk413nww" path="res://estilos/estilo_boton_focus.tres" id="6_22v88"]
+
+[sub_resource type="Animation" id="Animation_hvqrm"]
+resource_name = "FadeButton"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jbqps"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbqps"]
+_data = {
+&"FadeButton": SubResource("Animation_hvqrm"),
+&"RESET": SubResource("Animation_jbqps")
+}
+
+[sub_resource type="Animation" id="Animation_gc866"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WinLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.8653947, 0.025629552, 0.10093678, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e30hv"]
+resource_name = "rgb"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9999997, 0.84953177, 0.24989364, 1), Color(0.9490196, 0.40392157, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvqrm"]
+_data = {
+&"RESET": SubResource("Animation_gc866"),
+&"rgb": SubResource("Animation_e30hv")
+}
+
+[sub_resource type="Animation" id="Animation_22v88"]
+resource_name = "FadeButton"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.003921569), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pxysh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.003921569)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gc866"]
+_data = {
+&"FadeButton": SubResource("Animation_22v88"),
+&"RESET": SubResource("Animation_pxysh")
+}
+
+[sub_resource type="Animation" id="Animation_o7ylo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.9352462, 0.43208125, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-152, 130)]
+}
+
+[sub_resource type="Animation" id="Animation_uu6ov"]
+resource_name = "main"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.0666667, 2.0666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, 90), Vector2(-152, 140), Vector2(-152, 90)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.099999994, 0.76666665, 1.4333333, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.99607843, 0, 0, 1), Color(1, 0.48235294, 0.007843138, 1), Color(1, 1, 0.011764706, 1), Color(0.99607843, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_to8oe"]
+resource_name = "rgb_azul"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.0666666, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, 130), Vector2(-152, 170), Vector2(-152, 130)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1.1, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.9098039, 0.023529412, 0.9490196, 1), Color(0.27450982, 0.99607843, 1, 1), Color(0.9098039, 0.023529412, 0.9490196, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t5v7x"]
+resource_name = "rgb_rojo"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.0666666, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, 130), Vector2(-152, 170), Vector2(-152, 130)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1.1, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0.39215687, 0, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kkrf1"]
+_data = {
+&"RESET": SubResource("Animation_o7ylo"),
+&"main": SubResource("Animation_uu6ov"),
+&"rgb_azul": SubResource("Animation_to8oe"),
+&"rgb_rojo": SubResource("Animation_t5v7x")
+}
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_hvqrm"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i26rj")
+
+[node name="ButtonJugar" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -76.0
+offset_right = 118.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9999997, 0.84953177, 0.24989364, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.45882353, 0.011764706, 1)
+theme_override_colors/font_pressed_color = Color(0.9490196, 0.45882353, 0.011764706, 1)
+theme_override_colors/font_hover_color = Color(0.9227517, 0.38175797, 0.07996263, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_to8oe")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = ExtResource("3_uu6ov")
+theme_override_styles/pressed = ExtResource("4_hvqrm")
+theme_override_styles/hover = ExtResource("4_e30hv")
+theme_override_styles/focus = ExtResource("6_22v88")
+text = "Jugar"
+
+[node name="AnimationFadeIn" type="AnimationPlayer" parent="ButtonJugar"]
+libraries = {
+&"": SubResource("AnimationLibrary_jbqps")
+}
+autoplay = "FadeButton"
+
+[node name="AnimationColor" type="AnimationPlayer" parent="ButtonJugar"]
+libraries = {
+&"": SubResource("AnimationLibrary_hvqrm")
+}
+autoplay = "rgb"
+
+[node name="ButtonSalir" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.003921569)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = 98.5
+offset_right = 88.5
+offset_bottom = 193.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99607843, 0.27058825, 0.2627451, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.0627451, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9098039, 0.039215688, 0.08627451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_to8oe")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("3_uu6ov")
+theme_override_styles/pressed = ExtResource("4_hvqrm")
+theme_override_styles/hover = ExtResource("4_e30hv")
+theme_override_styles/focus = ExtResource("6_22v88")
+text = "Salir"
+
+[node name="AnimationBotonSalir" type="AnimationPlayer" parent="ButtonSalir"]
+libraries = {
+&"": SubResource("AnimationLibrary_gc866")
+}
+autoplay = "FadeButton"
+
+[node name="WinLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_top = 130.0
+offset_right = 512.0
+offset_bottom = 206.99982
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.9352462, 0.43208125, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_to8oe")
+theme_override_font_sizes/font_size = 36
+text = "¡Bienvenido a 
+nuestro 4 en raya!"
+horizontal_alignment = 1
+
+[node name="AnimationLabel" type="AnimationPlayer" parent="WinLabel"]
+libraries = {
+&"": SubResource("AnimationLibrary_kkrf1")
+}
+autoplay = "main"
+speed_scale = 1.5
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource("4_o7ylo")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="MusicManager"]
+position = Vector2(1, 0)
+stream = SubResource("AudioStreamMP3_hvqrm")
+volume_db = -14.136
+parameters/looping = true
+
+[node name="SFXManager" type="Node" parent="."]
+script = ExtResource("3_kkrf1")
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="SFXManager"]
+volume_db = -10.119
