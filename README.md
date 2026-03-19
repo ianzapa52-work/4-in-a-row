@@ -45,7 +45,6 @@ project.godot README.md
 ## 🚀 Mejoras futuras
 - 🤖 Implementación de IA con distintos niveles de dificultad  
 - 🎞️ Animaciones de caída de fichas  
-- 🎵 Sonido y música  
 - 🌐 Modo online o multijugador local avanzado  
 - 🎨 Temas visuales personalizables  
 - 🧪 Sistema de tests automatizados para la lógica del tablero  
